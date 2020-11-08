@@ -3,8 +3,8 @@
         nav.h-header__nav.main-nav
             ul.main-nav__list
                 li.main-nav__list-item
-                    v-route.main-nav__link(
-                        to="/"
+                    a.main-nav__link(
+                        href="/"
                     ) Главная
         h-cart
 

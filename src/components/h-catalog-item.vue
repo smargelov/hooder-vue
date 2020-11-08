@@ -1,17 +1,25 @@
 <template lang="pug">
     .h-catalog-item
         img(
-            :src="getSrcByImg(img)",
-            :alt="title"
+            :src="getSrcByImg(product.images[0])",
+            :alt="product.brand"
         ).h-catalog-item__img
-        .h-catalog-item__title {{title}}
-        .h-catalog-item__price {{price}} ₽
+        .h-catalog-item__title {{product.brand}}
+        .h-catalog-item__price {{product.price}} ₽
 
 </template>
 
 <script>
 export default {
     name: 'h-catalog-item',
+    props: {
+      product: {
+          type: Object,
+          default() {
+              return {}
+          }
+      }
+    },
     data() {
         return {
             img: 'M0010201.jpg',
@@ -20,7 +28,7 @@ export default {
         }
     },
     methods: {
-        getSrcByImg: img => '@/assets/images/' + img
+        getSrcByImg: img => require('@/assets/images/' + img)
     }
 };
 </script>
@@ -28,6 +36,7 @@ export default {
 <style lang="sass">
     .h-catalog-item
         display: flex
+        color: $main-dark-color
         flex-direction: column
         align-items: center
 </style>
