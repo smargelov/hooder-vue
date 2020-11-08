@@ -1,5 +1,7 @@
 <template lang="pug">
     #app
+        h1 Hello, world
+
 
 </template>
 
