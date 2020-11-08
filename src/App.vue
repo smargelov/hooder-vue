@@ -1,15 +1,18 @@
 <template lang="pug">
     #app
-        h1 Hello, world
+        HMainWrapper
 
 
 </template>
 
 <script>
+import HMainWrapper from '@/components/h-main-wrapper'
 
 export default {
     name: 'App',
-    components: {},
+    components: {
+        HMainWrapper,
+    },
 };
 </script>
 
