@@ -1,6 +1,6 @@
 <template lang="pug">
     #app
-        HMainWrapper
+        h-main-wrapper
 
 
 </template>

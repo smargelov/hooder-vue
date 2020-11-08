@@ -1,17 +1,25 @@
 <template lang="pug">
     main.h-main-wrapper
-        h1 {{title}}
+        h-header
+        h-catalog
 
 </template>
 
 <script>
+import HHeader from '@/components/h-header';
+import HCatalog from '@/components/h-catalog';
+
 export default {
     name: 'h-main-wrapper',
+    components: {
+        HHeader,
+        HCatalog,
+    },
     data() {
         return {
-            title: 'Test title'
-        }
-    }
+            title: 'Test title',
+        };
+    },
 
 };
 </script>

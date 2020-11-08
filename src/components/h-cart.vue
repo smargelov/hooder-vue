@@ -1,5 +1,5 @@
 <template lang="pug">
-    .h-cart
+    .h-cart Cart
 
 </template>
 
