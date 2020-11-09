@@ -33,6 +33,12 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
+
+.h-catalog
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))
+    gap: 30px
+
 
 </style>

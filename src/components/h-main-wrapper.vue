@@ -25,5 +25,7 @@ export default {
 </script>
 
 <style lang="sass">
-
+.h-main-wrapper
+    display: grid
+    justify-items: center
 </style>

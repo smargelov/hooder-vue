@@ -12,7 +12,6 @@
 
 <script>
 import HCart from '@/components/h-cart';
-
 export default {
     name: 'h-header',
     props: {},
@@ -26,6 +25,9 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
-
+<style lang="sass">
+.h-header
+    display: grid
+    grid-template-columns: 1fr auto
+    align-items: center
 </style>
