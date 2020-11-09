@@ -3,14 +3,15 @@
         h-catalog-item(
             v-for="product in PRODUCTS",
             :key="product.id",
-            :product="product"
+            :product="product",
+            @addToCart="addToCart(product)"
         )
 
 </template>
 
 <script>
 import HCatalogItem from '@/components/h-catalog-item';
-import {mapActions, mapGetters} from 'vuex'
+import {mapActions, mapGetters} from 'vuex';
 
 export default {
     name: 'h-catalog',
@@ -18,18 +19,22 @@ export default {
         HCatalogItem,
     },
     computed: {
-      ...mapGetters([
-          'PRODUCTS'
-      ])
+        ...mapGetters([
+            'PRODUCTS',
+        ]),
     },
     methods: {
         ...mapActions([
-            'GET_PRODUCTS_FROM_API'
-        ])
+            'GET_PRODUCTS_FROM_API',
+            'ADD_PRODUCT_TO_CART',
+        ]),
+        addToCart(product) {
+            this.ADD_PRODUCT_TO_CART(product);
+        },
     },
     mounted() {
-        this.GET_PRODUCTS_FROM_API()
-    }
+        this.GET_PRODUCTS_FROM_API();
+    },
 };
 </script>
 

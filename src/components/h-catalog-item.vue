@@ -6,6 +6,9 @@
         ).h-catalog-item__img
         .h-catalog-item__title {{product.brand}}
         .h-catalog-item__price {{product.price}} ₽
+        .h-catalog-item__btn.btn(
+            @click="addToCart(product.id)"
+        ) В корзину
 
 </template>
 
@@ -22,13 +25,14 @@ export default {
     },
     data() {
         return {
-            img: 'M0010201.jpg',
-            title: 'Test product',
-            price: 1900
+
         }
     },
     methods: {
-        getSrcByImg: img => require('@/assets/images/' + img)
+        getSrcByImg: img => require('@/assets/images/' + img),
+        addToCart() {
+            this.$emit('addToCart')
+        }
     }
 };
 </script>

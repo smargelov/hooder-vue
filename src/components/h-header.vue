@@ -6,17 +6,15 @@
                     a.main-nav__link(
                         href="/"
                     ) Главная
-        h-cart
 
 </template>
 
 <script>
-import HCart from '@/components/h-cart';
+
 export default {
     name: 'h-header',
     props: {},
     components: {
-        HCart
     },
     data() {
         return {};
@@ -28,6 +26,6 @@ export default {
 <style lang="sass">
 .h-header
     display: grid
-    grid-template-columns: 1fr auto
+    grid-template-columns: 1fr
     align-items: center
 </style>
