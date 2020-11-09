@@ -7,10 +7,14 @@ Vue.use(Vuex);
 let store = new Vuex.Store({
     state: {
         products: [],
+        cart: [],
     },
     mutations: {
         SET_PRODUCTS_TO_STATE: (state, products) => {
             state.products = products;
+        },
+        SET_PRODUCT_TO_CART: (state, product) => {
+            state.cart.push(product);
         },
     },
     actions: {
@@ -27,10 +31,16 @@ let store = new Vuex.Store({
                     return error;
                 });
         },
+        ADD_PRODUCT_TO_CART({commit}, product) {
+            commit('SET_PRODUCT_TO_CART', product);
+        },
     },
     getters: {
         PRODUCTS(store) {
             return store.products;
+        },
+        CART(store) {
+            return store.cart;
         },
     },
 });
