@@ -1,17 +1,17 @@
 <template lang="pug">
     #app
-        h-main-wrapper
+        MainWrapper
 
 
 </template>
 
 <script>
-import HMainWrapper from '@/components/h-main-wrapper'
+import MainWrapper from '@/components/MainWrapper'
 
 export default {
     name: 'App',
     components: {
-        HMainWrapper,
+        MainWrapper,
     },
 };
 </script>
