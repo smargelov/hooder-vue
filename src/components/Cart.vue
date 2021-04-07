@@ -1,13 +1,13 @@
 <template lang="pug">
-    .h-cart
-        .h-cart__title Cart
-        .h-cart__list
+	.h-cart
+		.h-cart__title Cart
+		.h-cart__list
 
 </template>
 
 <script>
 import CartItem from './CartItem';
-import {mapGetters} from 'vuex'
+import {mapGetters} from 'vuex';
 
 export default {
     props: {
@@ -23,9 +23,9 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'CART'
-        ])
-    }
+            'CART',
+        ]),
+    },
 };
 </script>
 
