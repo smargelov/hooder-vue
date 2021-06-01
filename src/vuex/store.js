@@ -24,7 +24,7 @@ let store = new Vuex.Store({
     },
     actions: {
         GET_PRODUCTS_FROM_API({ commit }) {
-            return axios('http://localhost:3000/catalog', {
+            return axios('http://localhost:4200/catalog', {
                 method: 'GET',
             })
                 .then((products) => {
