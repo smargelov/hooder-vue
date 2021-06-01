@@ -6,23 +6,31 @@ import _ from 'lodash';
 Vue.use(Vuex);
 
 let store = new Vuex.Store({
+
     state: {
         products: [],
         catalog: [],
         cart: [],
     },
+
     mutations: {
+
         SET_PRODUCTS_TO_STATE: (state, products) => {
             state.products = products;
         },
+
         SET_PRODUCTS_TO_CATALOG: (state) => {
             state.catalog = _.take(state.products, 6);
         },
+
         SET_PRODUCT_TO_CART: (state, product) => {
+            console.log(product);
             state.cart.push(product);
         },
+
     },
     actions: {
+
         GET_PRODUCTS_FROM_API({ commit }) {
             return axios('http://localhost:4200/catalog', {
                 method: 'GET',
@@ -37,17 +45,23 @@ let store = new Vuex.Store({
                     return error;
                 });
         },
+
         ADD_PRODUCT_TO_CART({ commit }, product) {
             commit('SET_PRODUCT_TO_CART', product);
         },
+
     },
+
     getters: {
+
         PRODUCTS(store) {
             return store.catalog;
         },
+
         CART(store) {
             return store.cart;
         },
+
     },
 });
 export default store;

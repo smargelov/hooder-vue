@@ -14,7 +14,6 @@
 		.h-catalog-item__btn.btn(
 			@click="addToCart(product.id)"
 		) В корзину
-
 </template>
 
 <script>
@@ -45,4 +44,6 @@ export default {
     color: $main-dark-color
     flex-direction: column
     align-items: center
+    &__btn
+      margin-top: auto
 </style>
