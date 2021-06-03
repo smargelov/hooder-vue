@@ -1,8 +1,7 @@
 <template lang="pug">
     main.h-main-wrapper
         MainHeader
-        MainCatalog
-        Cart
+        RouterView
 
 </template>
 

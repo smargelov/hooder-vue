@@ -2,10 +2,18 @@
     header.h-header
         nav.h-header__nav.main-nav
             ul.main-nav__list
-                li.main-nav__list-item
-                    a.main-nav__link(
-                        href="/"
-                    ) Главная
+                RouterLink(
+                    :to="{name: 'main'}"
+                    tag="li"
+                    class="main-nav__list-item"
+                    active-class="main-nav__list-item--active"
+                ) Главная
+                RouterLink(
+                    :to="{name: 'cart'}"
+                    tag="li"
+                    class="main-nav__list-item"
+                    active-class="main-nav__list-item--active"
+                ) Корзина
 
 </template>
 
@@ -13,8 +21,7 @@
 
 export default {
     props: {},
-    components: {
-    },
+    components: {},
     data() {
         return {};
     },
